@@ -17,16 +17,10 @@ export function handlePoolGrilled(event: PoolGrilled): void {
     let id = event.transaction.hash.toHexString().concat('-').concat(event.logIndex.toString())
     let grillCaller = new GrillCaller(id)
 
-  // if (grillCaller == null) {
-  //     // Entity fields can be set using simple assignments
-  //   grillCaller.count = BigInt.fromI32(0)
-  // }
-  //
-  //  grillCaller.count = grillCaller.count + BigInt.fromI32(1)
 
   //assign params to GrillCaller entity
     grillCaller.caller = event.params.tender
-    grillCaller.rewardsGrilled = event.params.grillAmount
+    grillCaller.tokensGrilled = event.params.grillAmount
 //
 //   //save
     grillCaller.save()

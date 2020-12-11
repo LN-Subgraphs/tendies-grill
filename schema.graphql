@@ -1,5 +1,5 @@
 type GrillCaller @entity {
   id: ID!
   caller: Bytes! # address of the account calling the Grill function
-  rewardsGrilled: BigInt! # rewards produced from this call of the Grill function
+  tokensGrilled: BigInt! # tokens burnt from this call of the Grill function
 }
