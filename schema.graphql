@@ -1,5 +1,16 @@
 type GrillCaller @entity {
   id: ID!
+  "Ethereum address that calls the Grill function of the Tendies contract"
   caller: Bytes! # address of the account calling the Grill function
+  "Number of tokens burnt from this call of the Grill function"
   tokensGrilled: BigInt! # tokens burnt from this call of the Grill function
+}
+
+type Payout @entity {
+  id: ID!
+  "Ethereum address that receives a payout from the Tendies reward pool"
+  receiver: Bytes!
+  "TEND tokens rewarded in this payout"
+  rewardPayout: BigInt!
+
 }
